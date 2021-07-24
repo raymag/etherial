@@ -1,0 +1,5 @@
+<div *ngIf="(info | json) != '{}'">
+    <span id="temperature">{{info.main.temp.toFixed(0)}}°C</span>
+    <span id="description">{{info.weather[0].description}}</span>
+    <span id="min-max">{{info.main.temp_min}}°C | {{info.main.temp_max}}°C</span>
+</div>

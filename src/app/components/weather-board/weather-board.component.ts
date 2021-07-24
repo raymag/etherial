@@ -8,7 +8,6 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./weather-board.component.css']
 })
 export class WeatherBoardComponent implements OnInit {
-  cityName = '';
   weatherData:any = {};
   
   constructor(private http: HttpClient) { }
@@ -16,19 +15,13 @@ export class WeatherBoardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  search() {
-    this.http.get<any>(`${environment.API_URL}?appid=${environment.API_KEY}&q=${encodeURI(this.cityName)}&units=metric`).subscribe(res => {
+  search(cityName: string) {
+    this.http.get<any>(`${environment.API_URL}?appid=${environment.API_KEY}&q=${encodeURI(cityName)}&units=metric`).subscribe(res => {
       this.weatherData = res;
     }, _err  => {
       this.weatherData = {};
       alert("City not found");
     });
     
-  }
-
-  keyDown(e: KeyboardEvent) {
-    if (e.keyCode === 13) {
-      this.search();
-    }
   }
 }

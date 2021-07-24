@@ -6,12 +6,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WeatherBoardComponent } from './components/weather-board/weather-board.component';
+import { CityNameInputComponent } from './components/city-name-input/city-name-input.component';
+import { WeatherInfoBoardComponent } from './components/weather-info-board/weather-info-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    WeatherBoardComponent
+    WeatherBoardComponent,
+    CityNameInputComponent,
+    WeatherInfoBoardComponent
   ],
   imports: [
     BrowserModule,

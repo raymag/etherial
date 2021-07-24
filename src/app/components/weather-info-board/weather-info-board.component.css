@@ -1,0 +1,17 @@
+span {
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+#temperature {
+    font-size: 4em;
+    font-weight: 600;
+    width: 100%;
+    border-bottom: 5px dashed #aaa;
+    margin-bottom: 25px;
+}
+#description, #min-max {
+    margin-top: 5px;
+    font-size: 1.2em;
+}
