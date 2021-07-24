@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import {HttpClient} from '@angular/common/http';
+import { FetcherService } from 'src/app/services/fetcher.service';
 
 @Component({
   selector: 'app-weather-board',
@@ -10,18 +9,17 @@ import {HttpClient} from '@angular/common/http';
 export class WeatherBoardComponent implements OnInit {
   weatherData:any = {};
   
-  constructor(private http: HttpClient) { }
+  constructor(private fetcherService: FetcherService) { }
 
   ngOnInit(): void {
   }
 
   search(cityName: string) {
-    this.http.get<any>(`${environment.API_URL}?appid=${environment.API_KEY}&q=${encodeURI(cityName)}&units=metric`).subscribe(res => {
+    this.fetcherService.fetch(cityName).subscribe((res: any) => {
       this.weatherData = res;
-    }, _err  => {
+    }, (_err:any) => {
       this.weatherData = {};
       alert("City not found");
     });
-    
   }
 }
