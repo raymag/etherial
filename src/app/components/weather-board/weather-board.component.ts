@@ -16,15 +16,8 @@ export class WeatherBoardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChange() {
-    console.log(this.cityName);
-    console.log(environment)
-  } 
-
   search() {
-    console.log("Searching");
     this.http.get<any>(`${environment.API_URL}?appid=${environment.API_KEY}&q=${encodeURI(this.cityName)}&units=metric`).subscribe(res => {
-      console.log(res);
       this.weatherData = res;
     }, _err  => {
       this.weatherData = {};
