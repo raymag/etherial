@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment.final';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-weather-board',
