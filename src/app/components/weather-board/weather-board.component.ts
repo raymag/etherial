@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.final';
 
 @Component({
   selector: 'app-weather-board',
@@ -10,7 +11,8 @@ export class WeatherBoardComponent implements OnInit {
 
   onChange() {
     console.log(this.cityName);
-  }
+    console.log(environment)
+  } 
 
   constructor() { }
 
