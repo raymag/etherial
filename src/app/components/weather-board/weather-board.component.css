@@ -1,0 +1,45 @@
+#weather-board {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: #00000010;
+    margin: auto 10px;
+    border-radius: 10px;
+}
+input {
+    width: 90%;
+    border: none;
+    border-bottom: 5px solid #00000000;
+    border-radius: 10px;
+    background: #ffffff33;
+    font-size: 1.6em;
+    padding: 5px;
+    margin-bottom: 30px;
+    outline: none;
+    color: #eee;
+    text-align: center;
+    text-transform: capitalize;
+}
+input:focus {
+    border-bottom: 5px solid #8a36da;
+}
+span {
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+#temperature {
+    font-size: 4em;
+    font-weight: 600;
+    width: 100%;
+    border-bottom: 5px dashed #aaa;
+    margin-bottom: 25px;
+}
+#description, #min-max {
+    margin-top: 5px;
+    font-size: 1.2em;
+}

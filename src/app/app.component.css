@@ -1,0 +1,22 @@
+.bg-flat::before {
+    content: "";
+    position: fixed;
+    background-color: rgb(97, 33, 105);
+    background-image: url("/assets/img/flat_illustration.jpg");
+    background-size: cover;
+    filter: blur(0.1em) brightness(.8);
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    z-index: -1;
+}
+.bg-flat {
+    color: #fff;
+}
+
+main {
+    border: solid 2px whitesmoke;
+    border-radius: 5px;
+    min-height: 90vh;
+    width: 90%;
+}
