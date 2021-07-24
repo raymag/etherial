@@ -1,9 +1,9 @@
 <div id="weather-board">
-    <input type="text" placeholder="CITY" [(ngModel)]="cityName" (ngModelChange)="onChange()">
-    <div>
-        <span id="temperature">15°C</span>
-        <span id="description">Cloudy</span>
-        <span id="min-max">10°C / 22°C</span>
+    <input type="text" placeholder="CITY" [(ngModel)]="cityName" (ngModelChange)="onChange()" (keydown)="keyDown($event)">
+    <div *ngIf="(weatherData | json) != '{}'">
+        <span id="temperature">{{weatherData.main.temp.toFixed(0)}}°C</span>
+        <span id="description">{{weatherData.weather[0].description}}</span>
+        <span id="min-max">{{weatherData.main.temp_min}}°C | {{weatherData.main.temp_max}}°C</span>
     </div>
 </div>
 
