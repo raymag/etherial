@@ -1,5 +1,9 @@
 # Etherial
 
+Look up Weather Forecasts with class and style.
+![screenshot](https://user-images.githubusercontent.com/29918030/126880947-c747e448-570c-4057-844a-bd06691932ea.png)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
 
 ## Development server
