@@ -9,6 +9,8 @@ import { WeatherBoardComponent } from './components/weather-board/weather-board.
 import { CityNameInputComponent } from './components/city-name-input/city-name-input.component';
 import { WeatherInfoBoardComponent } from './components/weather-info-board/weather-info-board.component';
 import { FetcherService } from './services/fetcher.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,13 @@ import { FetcherService } from './services/fetcher.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [FetcherService],
   bootstrap: [AppComponent]
